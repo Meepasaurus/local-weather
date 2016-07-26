@@ -166,6 +166,30 @@ function geo_error(){
   $('#location').text('Unable to find current location.');
 }
 
+function setTempButtons(isCurrentlyUS, setLocal){
+  if (isCurrentlyUS === false){
+    $('#w-temperature-units').text('C');
+    $('#w-wind-units').text(' kph');
+    $('#temp-c-button').css({'background-color':'#666', 'box-shadow':'inset 0 0 5px 2px #222'});
+    $('#temp-f-button').css({'background-color':'#333', 'box-shadow':'none'});
+    if (setLocal === true){
+      isUS = false;
+      localStorage.setItem('isUS', 'false');
+      $('#w-temperature').text(Math.round(tempC));
+      $('#w-windspeed').text(Math.round(windK));
+    }
+  } else {
+    isUS = true;
+    localStorage.setItem('isUS', 'true');
+    $('#w-temperature').text(Math.round(tempF));
+    $('#w-windspeed').text(Math.round(windM));
+    $('#w-temperature-units').text('F');
+    $('#w-wind-units').text(' mph');
+    $('#temp-f-button').css({'background-color':'#666', 'box-shadow':'inset 0 0 5px 2px #222'});
+    $('#temp-c-button').css({'background-color':'#333', 'box-shadow':'none'});
+  }
+}
+
 $(document).ready(function(){
   //get or initialize units settings
   isUS = $.parseJSON(localStorage.getItem('isUS'));
@@ -173,13 +197,8 @@ $(document).ready(function(){
     isUS = true;
     localStorage.setItem('isUS', 'true');
   }
-  if (isUS == false){
-    $('#temp-f-button').css('background-color', '#333');
-    $('#temp-c-button').css('background-color', '#666');
-    $('#w-temperature-units').text('C');
-    $('#w-wind-units').text(' kph');
-    $('#temp-c-button').css({'background-color':'#666', 'box-shadow':'inset 0 0 5px 2px #222'});
-    $('#temp-f-button').css({'background-color':'#333', 'box-shadow':'none'});
+  if (isUS === false){
+    setTempButtons(false, false);
   }
   
   //check for user's location
@@ -192,29 +211,15 @@ $(document).ready(function(){
   //change units
   $('#temp-f-button').on('click', function(event){
     event.preventDefault();
-    if (isUS == false){
-      isUS = true;
-      localStorage.setItem('isUS', 'true');
-      $('#w-temperature').text(Math.round(tempF));
-      $('#w-windspeed').text(Math.round(windM));
-      $('#w-temperature-units').text('F');
-      $('#w-wind-units').text(' mph');
-      $('#temp-f-button').css({'background-color':'#666', 'box-shadow':'inset 0 0 5px 2px #222'});
-      $('#temp-c-button').css({'background-color':'#333', 'box-shadow':'none'});
+    if (isUS === false){
+      setTempButtons(true, true);
     }
   });
   
   $('#temp-c-button').on('click', function(event){
     event.preventDefault();
-    if (isUS == true){
-      isUS = false;
-      localStorage.setItem('isUS', 'false');
-      $('#w-temperature').text(Math.round(tempC));
-      $('#w-windspeed').text(Math.round(windK));
-      $('#w-temperature-units').text('C');
-      $('#w-wind-units').text(' kph');
-      $('#temp-c-button').css({'background-color':'#666', 'box-shadow':'inset 0 0 5px 2px #222'});
-      $('#temp-f-button').css({'background-color':'#333', 'box-shadow':'none'});
+    if (isUS === true){
+      setTempButtons(false, true);
     }
   });
 });
