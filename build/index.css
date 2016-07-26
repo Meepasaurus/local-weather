@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  background: url("https://github.com/Meepasaurus/fcc-images/blob/master/local-weather/bg-carbon-small.jpg?raw=true"); }
+
+a, a:active, a:focus {
+  color: white;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+  outline: 0; }
+
+a:hover {
+  color: #0CF;
+  text-decoration: none; }
+
+.wrapper {
+  padding-top: 50px;
+  width: 100%;
+  overflow: auto; }
+
+.main-data-container {
+  max-width: 650px;
+  min-height: 420px;
+  margin: 0 auto 30px auto;
+  padding-bottom: 35px;
+  background-color: #173485;
+  box-shadow: inset 0 0 50px 5px #114;
+  font-weight: bold; }
+
+.location-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  color: white;
+  background-color: darkblue;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  box-shadow: inset 0 0 50px 5px #114;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1; }
+
+.location-container p {
+  margin: 0;
+  padding: 10px; }
+
+#weather-container {
+  margin-top: 50px;
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.weather-box {
+  max-width: 200px;
+  min-width: 150px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  flex: 1 0 300px;
+  display: none; }
+
+#temp-text {
+  font-size: 35px; }
+
+.temp-units-container {
+  width: 62px;
+  height: 32px;
+  margin: 0 auto;
+  border: solid 1px black;
+  border-radius: 5px; }
+
+.temp-button {
+  margin: 0 auto;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  display: inline-block; }
+
+#temp-f-button {
+  background-color: #666;
+  box-shadow: inset 0 0 5px 2px #222;
+  border-right: solid 1px black;
+  border-radius: 5px 0 0 5px; }
+
+#temp-c-button {
+  background-color: #333;
+  border-radius: 0 5px 5px 0;
+  border-left: solid 1px black; }
+
+.timer-container-container {
+  width: 200px;
+  height: 45px;
+  margin: 0 auto; }
+
+#timer-container {
+  width: 200px;
+  height: 45px;
+  margin: 30px auto;
+  padding: 10px;
+  background-color: #48737e;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  display: none; }
+
+footer {
+  width: 200px;
+  margin: 0 auto 30px auto;
+  padding: 10px;
+  background: #111;
+  text-align: center;
+  color: white;
+  line-height: 1.5; }

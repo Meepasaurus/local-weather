@@ -1,3 +1,14 @@
+# NPM #
+#######
+node_modules/*
+assets/exclude/*
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -25,6 +36,7 @@ $RECYCLE.BIN/
 # =========================
 
 .DS_Store
+.DS_Store?
 .AppleDouble
 .LSOverride
 

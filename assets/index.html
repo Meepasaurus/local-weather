@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local Weather</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"/>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+  <main class="wrapper">
+    <div class="main-data-container">
+      <div class="location-container">
+        <p id="location-time">Loading Local Weather...</p>
+        <p id="location-address">Please enable location tracking for your browser or device.</p>
+      </div>
+      
+      <div id="weather-container">
+        <div class="weather-box">
+          <img id="w-icon" src="https://github.com/Meepasaurus/fcc-images/blob/master/local-weather/icons/cloudy.png?raw=true" alt="weather icon"/>
+        </div>
+        <div class="weather-box">
+          <p id="w-description">Weather Description</p>
+          <p id="temp-text"><span id="w-temperature">0</span> &deg;<span id="w-temperature-units"</span>F</p>
+          <div class="temp-units-container">
+            <a id="temp-f-button" class="temp-button" href="#">&deg;F</a><a id="temp-c-button" class="temp-button" href="#">&deg;C</a>
+          </div>
+        </div>
+        <div class="weather-box">
+          <p>Precipitation: <span id="w-precipitation">0</span>%</p>
+          <p>Humidity: <span id="w-humidity">0</span>%</p>
+          <p>Wind: <span id="w-windspeed">0</span><span id="w-wind-units"> mph</span></p>
+        </div>
+      </div>
+
+      <div class="timer-container-container">
+        <div id="timer-container">
+          <p id="timer">Next Update: 00:00</p>
+        </div>
+      </div>
+  </div>
+
+    <footer>
+      <p>Powered by Forecast.io</br>and Google Maps</p>
+    </footer>
+</main>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!-- If you are trying to run this outside of CodePen, you will need to replace this with your own Google Maps JS Browser API key. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8lOF05OBgx7psgT5yPKgU6ckmbhHTkZg"></script>
+<script src="index.js"></script>
+</body>
+</html>
