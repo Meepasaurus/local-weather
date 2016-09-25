@@ -3,7 +3,7 @@ Local Weather
 
 - Uses Google Maps JS Browser API (will need to provide own key if running outside of CodePen) and Forecast.io* (exposed for educational purposes, has 1k daily quota).
 
-    *As of September 20th, 2016, Forecast.io changed names to Dark Sky.
+    *As of September 20th, 2016, Forecast.io changed its name to Dark Sky. 
 
 - Please note that navigator.geolocation requires https:// when using Chrome or you won't get a prompt to share your location.
 
