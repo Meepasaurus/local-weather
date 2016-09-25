@@ -39,7 +39,7 @@ a:hover {
 
 .main-data-container {
   max-width: 650px;
-  min-height: 430px;
+  min-height: 455px;
   margin: 0 auto 30px auto;
   padding-bottom: 35px;
   background-color: $main-container-blue;
@@ -118,12 +118,6 @@ a:hover {
   border-left: solid 1px black;
 }
 
-.timer-container-container {
-  width: 200px;
-  height: 45px;
-  margin: 0 auto;
-}
-
 #timer-container {
   width: 200px;
   height: 45px;
@@ -137,12 +131,29 @@ a:hover {
   display: none;
 }
 
+.timer-clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  p {
+    margin: 0;
+  }
+}
+
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
+  height: 100%;
   margin: 0 auto 30px auto;
   padding: 10px;
   background: $footer-gray;
   text-align: center;
   color: white;
   line-height: 1.5;
+  p {
+    margin: 0;
+  }
 }

@@ -113,7 +113,7 @@ var Forecast = function(){
       //Using client-side API keys is bad, but that's what FCC asks for this project. Please don't spam.
       $.ajax({
         dataType: 'jsonp',
-        url: 'https://api.forecast.io/forecast/e9097c35ea613c2b9cecdbe75e35d04c/'+ currentLatLng[0] + ',' + currentLatLng[1],
+        url: 'https://api.darksky.net/forecast/e9097c35ea613c2b9cecdbe75e35d04c/'+ currentLatLng[0] + ',' + currentLatLng[1],
         success: function(data) {
           $('#w-description').text(thisForecast.getIconText(data.currently.icon));
           thisForecast.setIconCSS(data.currently.icon);
